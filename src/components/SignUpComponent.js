@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 const SignUpComponent = () => {
     const emailRef = useRef();
@@ -31,7 +32,7 @@ const SignUpComponent = () => {
         <>
             <Card>
                 <Card.Body>
-                    <h2 className='text-center mb-4'>Sign Up</h2>
+                    <h2 className='text-center mb-4'>Sign Up</h2>                             
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id='email'>
@@ -50,7 +51,7 @@ const SignUpComponent = () => {
                     </Form>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">Already have a account? Log In</div>
+            <div className="w-100 text-center mt-2">Already have a account? <Link to="/signin">Log In</Link></div>
         </>
     )
 }
